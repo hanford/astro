@@ -371,6 +371,8 @@ export default function createIntegration({
 													...(prebundleContentRuntime ? (['astro/content/runtime'] as const) : []),
 													'astro/compiler-runtime',
 													'astro/jsx-runtime',
+													// Always imported by the runtime logger setup in vite-plugin-assets.ts.
+													'astro/logger/console',
 													...(config.logger?.entrypoint === 'astro/logger/json'
 														? ['astro/logger/json']
 														: []),
