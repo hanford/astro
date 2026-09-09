@@ -611,6 +611,13 @@ function onPopState(ev: PopStateEvent) {
 	// Just ignore stateless entries.
 	// The browser will handle navigation fine without our help
 	if (ev.state === null) {
+		// If the URL points to a different page than what the router currently
+		// shows, the browser won't fix the DOM for us. Reload to recover.
+		// This happens when external code calls history.pushState() directly
+		// with null state, bypassing the router's state tracking (#17882).
+		if (!samePage(originalLocation, new URL(location.href))) {
+			location.reload();
+		}
 		return;
 	}
 	const state: State = history.state;
