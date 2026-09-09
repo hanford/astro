@@ -1,5 +1,11 @@
 # astro-vscode
 
+## 2.16.21
+
+### Patch Changes
+
+- [#17916](https://github.com/withastro/astro/pull/17916) [`8eaa4f2`](https://github.com/withastro/astro/commit/8eaa4f21e001293f15957daebc3b2486a5aa681d) Thanks [@matthewp](https://github.com/matthewp)! - Fixes organize imports across frontmatter and multiple script tags
+
 ## 2.16.20
 
 ### Patch Changes
